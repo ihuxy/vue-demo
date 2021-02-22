@@ -28,7 +28,7 @@ app.use('/v1',createProxyMiddleware({
 
 app.set('host',HOST);
 app.set('port',PRO_PORT);
-app.set('env','production');
+// app.set('env','production');
 
 app.use(cors());
 app.use(logger('dev'));
@@ -36,13 +36,12 @@ app.use(bodyParser.json({limit:'20mb'}));
 app.use(bodyParser.urlencoded({limit:'20mb',extended:true}));
 app.use(compression());
 
-if(app.get('env')==='production'){
+/* if(app.get('env')==='production'){
   app.use(function(req,res,next) {
     const protocol=req.get('x-forwarded-proto');
-    console.log(22,protocol,req.hostname,req.url);
     protocol==='https'?next():res.redirect('https://'+req.hostname+req.url);
   });
-}
+} */
 
 const build=path.resolve(appName,BUILD_DIR);
 // app.use(express.static(build));
