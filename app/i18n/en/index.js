@@ -3,7 +3,7 @@ import nav from './nav';
 import theme from './theme';
 import main from './main';
 
-const title='project platform';
+const title='platform vue';
 
 export default {
   title,
