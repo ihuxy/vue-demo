@@ -105,10 +105,10 @@ const routers=nameList=>[
             path:'/suspense',
             name:nameList['/tools/suspense'],
             icon:LayoutOutlined,
-            /* loadData:{
+            loadData:{
               userinfo:findFn,
               users:findAllFn,
-            }, */
+            },
             component:()=>import('../pages'),
             denied:false,
           },
